@@ -3,27 +3,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../controllers/exercise_controller.dart';
 
 class WorkoutScreen extends ConsumerWidget {
-  const WorkoutScreen({Key? key}) : super(key: key);
+  const WorkoutScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final exercisesAsyncValue = ref.watch(exerciseControllerProvider);
-
+    final exercise = ref.watch(exerciseProvider);
     return Scaffold(
-      appBar: AppBar(title: const Text('Workout')),
-      body: exercisesAsyncValue.when(
-        data: (exercises) {
-          return ListView.builder(
-            itemCount: exercises.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text('Exercise ${(index + 1)}'),
-              );
-            },
-          );
-        },
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (err, stack) => Center(child: Text('Error: $err')),
+      appBar: AppBar(
+        title: const Text('Workout Planner'),
+      ),
+      body: Center(
+        child: Text('Current exercise: $exercise'),
       ),
     );
   }

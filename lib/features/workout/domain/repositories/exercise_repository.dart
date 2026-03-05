@@ -1,5 +1,5 @@
-import 'package:fitness_app/features/workout/domain/entities/exercise.dart';
+import '../../data/models/exercise_model.dart';
 
 abstract class ExerciseRepository {
-  Future<List<Exercise>> fetchExercises();
+  Future<List<ExerciseModel>> fetchExercises();
 }

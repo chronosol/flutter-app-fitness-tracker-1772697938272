@@ -1,14 +1,14 @@
-import 'dart:async';
-import 'package:fitness_app/features/workout/domain/entities/exercise.dart';
-import 'package:fitness_app/features/workout/domain/repositories/exercise_repository.dart';
+import '../models/exercise_model.dart';
+import '../../domain/repositories/exercise_repository.dart';
 
 class ExerciseRepositoryImpl implements ExerciseRepository {
   @override
-  Future<List<Exercise>> fetchExercises() async {
-    // Mock data fetching
-    return Future.value([
-      Exercise(name: 'Push Up', category: 'Strength', duration: 30),
-      Exercise(name: 'Jogging', category: 'Cardio', duration: 20),
-    ]);
+  Future<List<ExerciseModel>> fetchExercises() async {
+    // Simulate network call
+    await Future.delayed(const Duration(seconds: 2));
+    return [
+      ExerciseModel(name: 'Push-up', description: 'A basic push-up exercise.', duration: 30),
+      ExerciseModel(name: 'Squat', description: 'A basic squat exercise.', duration: 45),
+    ];
   }
 }

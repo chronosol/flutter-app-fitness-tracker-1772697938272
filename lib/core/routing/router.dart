@@ -1,24 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
 
 final GoRouter router = GoRouter(
-  routes: <GoRoute>[  
+  routes: <Route>[    
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return const HomeScreen();
+        return const Scaffold(
+          body: Center(
+            child: Text('Home Page'),
+          ),
+        );
       },
     ),
   ],
 );
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Home')),
-    );
-  }
-}
