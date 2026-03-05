@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:candy_crush_clone/core/theme/theme.dart';
+import 'package:candy_crush_clone/core/routing/router.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
+    return MaterialApp.router(
+      routerConfig: MyRouter.goRouter,
+      theme: CustomTheme.lightTheme,
+      darkTheme: CustomTheme.darkTheme,
     );
   }
 }

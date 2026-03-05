@@ -1,0 +1,1 @@
+// This file was not intended to be generated. It should import the correct Flutter dependencies only elsewhere.

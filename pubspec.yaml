@@ -1,6 +1,5 @@
-name: fitness_app
-version: 1.0.0+1
-description:"Fitness app with workout tracking, progress charts, goal setting, and exercise library"
+name: candy_crush_clone
+description:"A Flutter application."
 publish_to: 'none'
 environment:
   sdk: '>=3.3.0 <4.0.0'
@@ -8,8 +7,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.6.1
-  go_router: ^14.2.0
-  shared_preferences: ^2.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
